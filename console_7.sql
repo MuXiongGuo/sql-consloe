@@ -129,3 +129,10 @@ use mysql;
 GRANT ALL ON *.* TO 'kalacloud-remote'@'%' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
+
+use blog;
+
+# 为表添加字段
+ALTER TABLE blog_article ADD cover_image_url varchar(255) DEFAULT '' COMMENT '封面图片地址';
+
+ALTER TABLE blog_article DROP nickname;
